@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTheme } from './ThemeContext';
 import { Sun, Moon, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 import { Logo } from './Logo';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface NavbarProps {
   onStartProject: () => void;
@@ -77,15 +78,35 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
           {/* Theme Toggle Button */}
           <button
             onClick={toggleTheme}
-            className="p-2.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-200 cursor-pointer"
+            className="relative p-2.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-500/40 transition-colors duration-200 cursor-pointer overflow-hidden"
             aria-label="Toggle theme"
             id="theme-toggle-btn"
           >
-            {resolvedTheme === 'dark' ? (
-              <Sun className="w-4 h-4" />
-            ) : (
-              <Moon className="w-4 h-4" />
-            )}
+            <AnimatePresence mode="wait" initial={false}>
+              {resolvedTheme === 'dark' ? (
+                <motion.span
+                  key="sun"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="block"
+                >
+                  <Sun className="w-4 h-4" />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="moon"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="block"
+                >
+                  <Moon className="w-4 h-4" />
+                </motion.span>
+              )}
+            </AnimatePresence>
           </button>
 
           {/* Single CTA Button */}
@@ -103,10 +124,34 @@ export const Navbar: React.FC<NavbarProps> = ({ onStartProject }) => {
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300"
+            className="relative p-2 rounded-lg bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 overflow-hidden"
             aria-label="Toggle theme"
           >
-            {resolvedTheme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            <AnimatePresence mode="wait" initial={false}>
+              {resolvedTheme === 'dark' ? (
+                <motion.span
+                  key="sun"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="block"
+                >
+                  <Sun className="w-4 h-4" />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="moon"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="block"
+                >
+                  <Moon className="w-4 h-4" />
+                </motion.span>
+              )}
+            </AnimatePresence>
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

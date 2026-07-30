@@ -1,0 +1,408 @@
+import { Service, ProcessStep, IndustryCard, Testimonial, FAQItem, ValueProp } from '../types';
+
+export const SERVICES: Service[] = [
+  {
+    id: 'business-websites',
+    title: 'Premium Business Websites',
+    description: 'High-converting, authoritative websites engineered to showcase your brand, establish trust, and capture leads 24/7.',
+    longDescription: 'Custom-designed websites tailored specifically to your target market. Built with high performance, lead capture forms, local SEO, and intuitive content management.',
+    iconName: 'Building2',
+    benefits: ['Sub-second page loading speeds', 'Mobile-first responsive layout', 'Integrated lead capture & booking', 'Custom brand strategy & typography'],
+    idealFor: 'Local services, consultancies, agencies, and service providers',
+    timeline: '1-2 Weeks',
+    popular: true
+  },
+  {
+    id: 'ai-automation',
+    title: 'Automation & Workflows',
+    description: 'Automate repetitive business tasks with tailored systems that save time and improve operational efficiency.',
+    longDescription: 'Eliminate tedious manual processes. We design custom workflows to process documents, handle internal data tasks, and automate complex team operations.',
+    iconName: 'Cpu',
+    benefits: ['10x speedup in business processes', 'Custom API & Zapier/Make connections', 'Automated data extraction & reporting', 'Zero human operational overhead'],
+    idealFor: 'Growing SMBs, agencies, corporate teams, and operations-heavy firms',
+    timeline: '1-2 Weeks',
+    popular: true
+  },
+  {
+    id: 'ai-integration',
+    title: 'Smart Website Integration',
+    description: 'Embed smart features, automated search, and recommendation logic directly into your existing website.',
+    longDescription: 'Transform your website from static text into a more intelligent experience. We integrate smart search, personalization logic, and seamless third-party systems.',
+    iconName: 'Sparkles',
+    benefits: ['Semantic vector search capabilities', 'AI content & product recommendations', 'Seamless backend API proxying', 'Enhanced visitor engagement metrics'],
+    idealFor: 'E-commerce stores, content portals, SaaS platforms, and enterprise sites',
+    timeline: '1-2 Weeks'
+  },
+  {
+    id: 'ai-chatbots',
+    title: 'Smart Chat Support',
+    description: '24/7 customer support and lead qualification flows powered by your business knowledge base.',
+    longDescription: 'Never lose a lead outside business hours. Our custom support flows answer inquiries, qualify prospects, and schedule meetings automatically using your company data.',
+    iconName: 'Bot',
+    benefits: ['Trained on your private documentation', '24/7 instantaneous customer support', 'Automatic lead qualification & booking', 'Multi-language support out of the box'],
+    idealFor: 'Service businesses, clinics, real estate, and online storefronts',
+    timeline: '3-5 Days',
+    popular: true
+  },
+  {
+    id: 'custom-web-apps',
+    title: 'Custom Web Applications',
+    description: 'Bespoke web tools, client portals, and interactive business software built for seamless scalability.',
+    longDescription: 'When off-the-shelf software falls short. We build custom full-stack web applications, internal dashboards, customer portals, and SaaS MVPs tailored precisely to your requirements.',
+    iconName: 'ShieldCheck',
+    benefits: ['Scalable TypeScript & React architecture', 'Secure user authentication & cloud storage', 'Custom API development', 'Sub-second real-time responsiveness'],
+    idealFor: 'Startups, B2B companies, and growing enterprise platforms',
+    timeline: '2-3 Weeks'
+  },
+  {
+    id: 'landing-pages',
+    title: 'High-Impact Landing Pages',
+    description: 'Laser-focused single-page experience designed for product launches, ad campaigns, and maximum conversion rates.',
+    longDescription: 'When every click counts. Built around conversion rate optimization (CRO) principles with persuasive copywriting structure and instant lead triggers.',
+    iconName: 'Zap',
+    benefits: ['Optimized for ad traffic (Google/Meta)', 'A/B testing ready architecture', 'Custom micro-interactions & visuals', 'High conversion rate layout structure'],
+    idealFor: 'SaaS launches, specific product promos, ad campaign landing pages',
+    timeline: '3-5 Days'
+  },
+  {
+    id: 'website-redesign',
+    title: 'Website Redesign',
+    description: 'Upgrade slow, outdated, low-performing legacy websites into modern, high-converting digital powerhouses.',
+    longDescription: 'We audit your current site, salvage valuable content & SEO rankings, and rewrite the frontend with cutting-edge tech and modern luxury aesthetics.',
+    iconName: 'RefreshCw',
+    benefits: ['3x-5x speed improvement', 'Modern luxury aesthetic overhaul', 'Zero loss of current Google SEO rank', 'Mobile responsiveness guarantee'],
+    idealFor: 'Businesses with sites older than 3 years or low conversion rates',
+    timeline: '1-2 Weeks'
+  },
+  {
+    id: 'seo-optimization',
+    title: 'Technical SEO & Rank',
+    description: 'Rank #1 on Google for key local search terms and load under 0.5s on every mobile device.',
+    longDescription: 'Technical SEO audits, structured schema markup, keyword architecture, Google Business Profile optimization, and Core Web Vitals speed perfection.',
+    iconName: 'TrendingUp',
+    benefits: ['100/100 Core Web Vitals scores', 'Local Business Schema JSON-LD', 'Keyword optimized page architecture', 'Google Search Console configuration'],
+    idealFor: 'Any business wanting organic inbound customers from search',
+    timeline: '1 Week'
+  },
+  {
+    id: 'maintenance-ai',
+    title: 'Continuous Care & Maintenance',
+    description: 'Ongoing technical maintenance, hosting setup, security updates, and platform optimization.',
+    longDescription: 'Peace of mind web operations. We handle server uptime, security patches, content updates, and support your site as it grows.',
+    iconName: 'Bot',
+    benefits: ['99.9% guaranteed uptime', 'Ongoing support & optimization', 'Monthly content & menu updates', 'Continuous security monitoring'],
+    idealFor: 'Busy business owners who want a zero-headache digital solution',
+    timeline: 'Ongoing Service'
+  }
+];
+
+export const PROCESS_STEPS: ProcessStep[] = [
+  {
+    number: '01',
+    title: 'Discover',
+    subtitle: 'Understanding Your Business Goals',
+    description: 'We start with a 20-minute strategy session to deeply understand your business model, target audience, brand identity, and revenue goals.',
+    deliverables: ['Strategy Blueprint', 'Competitor Analysis', 'Conversion Roadmap'],
+    duration: 'Day 1-2',
+    iconName: 'Compass'
+  },
+  {
+    number: '02',
+    title: 'Research',
+    subtitle: 'Market & Audience Positioning',
+    description: 'We analyze your top competitors, customer search habits, and industry trends to create an irresistible visual positioning angle.',
+    deliverables: ['Target Persona Insights', 'SEO Keyword Plan', 'Information Architecture'],
+    duration: 'Day 2-3',
+    iconName: 'Search'
+  },
+  {
+    number: '03',
+    title: 'Wireframe',
+    subtitle: 'UX Blueprinting & Conversion Flow',
+    description: 'Before touching colors, we map out exact visitor conversion pathways ensuring every element guides the user towards taking action.',
+    deliverables: ['Interactive UX Wireframes', 'Content Hierarchy', 'Call-To-Action Mapping'],
+    duration: 'Day 3-4',
+    iconName: 'Layout'
+  },
+  {
+    number: '04',
+    title: 'Design',
+    subtitle: 'High-End Luxury Visual Craft',
+    description: 'We craft custom typography, visual assets, color schemes, and micro-interactions that communicate instant premium quality.',
+    deliverables: ['High-Fidelity UI Designs', 'Interactive Prototypes', 'Brand Design Tokens'],
+    duration: 'Day 5-8',
+    iconName: 'Palette'
+  },
+  {
+    number: '05',
+    title: 'Develop',
+    subtitle: 'Clean Code & Sub-Second Speed',
+    description: 'We translate designs into ultra-clean, semantic, accessible code with Astro and Tailwind, optimizing every image and asset for instant loading.',
+    deliverables: ['Semantic Astro/React Codebase', 'Fast Responsive Layouts', 'CMS Integrations'],
+    duration: 'Day 8-12',
+    iconName: 'Code2'
+  },
+  {
+    number: '06',
+    title: 'Testing',
+    subtitle: 'Rigorous QA & Speed Audit',
+    description: 'We test across 15+ screen sizes, real mobile devices, browsers, and run 100/100 Lighthouse performance audits before launch.',
+    deliverables: ['Cross-Browser Audit', 'WCAG Accessibility Check', 'Lighthouse 95+ Score'],
+    duration: 'Day 12-13',
+    iconName: 'CheckCircle2'
+  },
+  {
+    number: '07',
+    title: 'Launch',
+    subtitle: 'Zero-Downtime Global Deployment',
+    description: 'We connect your custom domain, set up SSL, configure Google Analytics & Search Console, and launch on high-speed global CDN.',
+    deliverables: ['Domain & SSL Setup', 'Google Analytics & Tag Setup', 'Sitemap Submission'],
+    duration: 'Day 14',
+    iconName: 'Rocket'
+  },
+  {
+    number: '08',
+    title: 'Support',
+    subtitle: 'Growth Monitoring & Support',
+    description: 'We stand by you post-launch to monitor lead conversions, handle content updates, and ensure your web platform keeps generating revenue.',
+    deliverables: ['30-Day Post Launch Guarantee', 'Client Video Guide', 'Priority Maintenance'],
+    duration: 'Ongoing',
+    iconName: 'LifeBuoy'
+  }
+];
+
+export const INDUSTRIES: IndustryCard[] = [
+  {
+    id: 'liquor-spirits',
+    title: 'Liquor & Fine Spirits',
+    subtitle: 'Luxury wine vaults, craft liquor stores & delivery portals',
+    iconName: 'Wine',
+    description: 'Elevated digital storefronts for wine shops, rare whiskey vaults, and craft liquor boutiques.',
+    howWeHelp: 'We engineer age-verified online spirit catalogs with tasting profile search, rare bottle reservation vaults, and 1-hour local delivery checkout.',
+    metrics: '+280% Online Spirits Orders',
+    keyFeatures: ['Age-Gate Guard', 'Vintage Wine Catalog', 'Sommelier Guides', '1-Hour Local Delivery']
+  },
+  {
+    id: 'gym',
+    title: 'Gym & Fitness',
+    subtitle: 'High-energy member acquisition platforms',
+    iconName: 'Dumbbell',
+    description: 'Convert local active seekers into paying gym members with free pass forms and class schedules.',
+    howWeHelp: 'We replace outdated PDF schedules with real-time class filters and 1-click free day pass signups that feed directly into your sales CRM.',
+    metrics: '+240% Trial Pass Signups',
+    keyFeatures: ['Class Schedules', 'Pass Engine', 'Trainer Showcases', 'Membership Pricing']
+  },
+  {
+    id: 'restaurant',
+    title: 'Restaurants',
+    subtitle: 'Sensory dining & reservation engines',
+    iconName: 'Utensils',
+    description: 'Showcase signature dishes, stream table reservations, and capture catering inquiries.',
+    howWeHelp: 'We create high-definition visual menus with allergen filters and instant table reservations that reduce phone call friction by 80%.',
+    metrics: '3.1x Online Table Bookings',
+    keyFeatures: ['Dietary Menu', 'Table Booking', 'Takeout Orders', 'Catering Form']
+  },
+  {
+    id: 'cafe',
+    title: 'Cafes & Bakeries',
+    subtitle: 'Boutique coffee & artisanal food hubs',
+    iconName: 'Coffee',
+    description: 'Engage local coffee lovers, promote daily baked goods, and sell bean subscriptions.',
+    howWeHelp: 'We integrate QR menu ordering, highlight daily specials, and optimize local Google Maps search rank for nearby walk-in traffic.',
+    metrics: '100% Core Web Vitals',
+    keyFeatures: ['Visual Menu', 'QR Table Ordering', 'Bean Subscriptions', 'Local Map SEO']
+  },
+  {
+    id: 'retail',
+    title: 'Retail & E-Commerce',
+    subtitle: 'Sleek storefronts & high-converting product pages',
+    iconName: 'ShoppingBag',
+    description: 'Boutique online stores with fast checkout, product highlights, and local inventory maps.',
+    howWeHelp: 'We build sub-second product catalog experiences with 1-tap Apple Pay/Google Pay checkout flows that eliminate cart abandonment.',
+    metrics: '+180% Checkout Speed',
+    keyFeatures: ['Fast Catalog', '1-Tap Checkout', 'Inventory Badges', 'Product Modals']
+  },
+  {
+    id: 'healthcare',
+    title: 'Healthcare & Wellness',
+    subtitle: 'Trust-building patient booking portals',
+    iconName: 'HeartPulse',
+    description: 'Clean, empathetic websites for dental clinics, med spas, therapy centers, and doctors.',
+    howWeHelp: 'We instill immediate patient trust with verified reviews, doctor credentials, and HIPAA-friendly online appointment scheduling.',
+    metrics: '+210% Patient Bookings',
+    keyFeatures: ['HIPAA Forms', 'Doctor Bios', 'Treatment Guides', 'Patient Reviews']
+  },
+  {
+    id: 'corporate',
+    title: 'Corporate & Enterprise',
+    subtitle: 'Authoritative international B2B platforms',
+    iconName: 'Building',
+    description: 'Multi-divisional enterprise portals engineered for corporate credibility and RFP requests.',
+    howWeHelp: 'We organize multi-subsidiary conglomerates into streamlined B2B web portals with multi-language switching and investor hubs.',
+    metrics: 'Sub-second i18n speed',
+    keyFeatures: ['Multilingual', 'RFP Builder', 'Investor Hub', 'ESG Compliance']
+  },
+  {
+    id: 'hospitality',
+    title: 'Hospitality & Hotels',
+    subtitle: 'Luxury boutique stay & booking showcases',
+    iconName: 'Hotel',
+    description: 'Immersive room tours, direct guest booking engines, and local experience guides.',
+    howWeHelp: 'We bypass third-party OTA booking commissions by giving guests a direct, elegant booking experience right on your domain.',
+    metrics: '-30% OTA Commission Loss',
+    keyFeatures: ['Room Tours', 'Direct Booking', 'Local Guides', 'Amenities Grid']
+  },
+  {
+    id: 'real-estate',
+    title: 'Real Estate & Property',
+    subtitle: 'High-end property listing & agent showcases',
+    iconName: 'Home',
+    description: 'Fullscreen floor plan viewings, neighborhood stats, and high-value lead capture.',
+    howWeHelp: 'We display luxury property portfolios with interactive photo galleries, virtual tour embeds, and private viewing request forms.',
+    metrics: '4x Higher Viewing Inquiries',
+    keyFeatures: ['Interactive Gallery', 'Floor Plans', 'Private Viewing Form', 'Agent Profiles']
+  },
+  {
+    id: 'startups',
+    title: 'Startups & SaaS',
+    subtitle: 'Conversion-optimized product launches',
+    iconName: 'Rocket',
+    description: 'Laser-focused product landing pages, interactive pricing tiers, and waitlist engines.',
+    howWeHelp: 'We help founders launch polished product websites in days that convert investors, early adopters, and paying subscribers.',
+    metrics: '5.2% Avg Conversion Rate',
+    keyFeatures: ['Waitlist Engine', 'Feature Highlights', 'Interactive Pricing', 'Demo Modals']
+  }
+];
+
+export const WHY_CHOOSE_US: ValueProp[] = [
+  {
+    id: 'premium-ui',
+    title: 'Premium UI/UX Design',
+    description: 'Custom luxury typography, spacious layouts, and micro-interactions crafted to communicate immediate market leadership.',
+    iconName: 'Sparkles',
+    badge: 'Luxury Visuals'
+  },
+  {
+    id: 'ai-automation',
+    title: 'Automation & Integrations',
+    description: 'Streamline internal business operations and customer touchpoints with efficient workflows and custom API connections.',
+    iconName: 'Bot',
+    badge: 'Smart Automation'
+  },
+  {
+    id: 'fast-seo',
+    title: 'Fast & SEO Optimized',
+    description: 'Sub-0.5s load speeds, 95+ Lighthouse score, and structured JSON-LD schema engineered to rank top on search engines.',
+    iconName: 'Zap',
+    badge: 'Sub-Second Speed'
+  },
+  {
+    id: 'responsive',
+    title: 'Responsive on Every Device',
+    description: 'Fluid responsive design engineered to look crisp across mobile smartphones, tablets, laptops, and ultra-wide displays.',
+    iconName: 'Smartphone',
+    badge: 'All Devices'
+  },
+  {
+    id: 'scalable',
+    title: 'Scalable Architecture',
+    description: 'Robust TypeScript codebase with modular component design built to scale seamlessly as traffic and revenue grow.',
+    iconName: 'Layers',
+    badge: 'Future-Proof'
+  },
+  {
+    id: 'long-term-support',
+    title: 'Long-Term Support & Care',
+    description: 'Continuous platform uptime, security monitoring, and ongoing optimization so you never worry about technical debt or downtime.',
+    iconName: 'ShieldCheck',
+    badge: 'Dedicated Care'
+  }
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: '1',
+    quote: 'Innovexa Studio transformed Gym Station from a sluggish local gym into a digital powerhouse. Our free day pass signups increased by 240% within the first 30 days!',
+    author: 'Marcus Vance',
+    role: 'Founder & Managing Director',
+    company: 'Gym Station Fitness Co.',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop',
+    projectLink: 'https://gym-station.vercel.app/',
+    rating: 5,
+    highlightMetric: '+240% Trial Pass Conversions'
+  },
+  {
+    id: '2',
+    quote: 'The team captured the exact artisanal aesthetic of Green Beans Cafe. Weekend table reservations are now fully automated and our online menu experience is incredible.',
+    author: 'Elena Rostova',
+    role: 'Head of Brand & Hospitality',
+    company: 'Green Beans Cafe',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&auto=format&fit=crop',
+    projectLink: 'https://green-beans-cafe.vercel.app',
+    rating: 5,
+    highlightMetric: '3.1x Online Reservations'
+  },
+  {
+    id: '3',
+    quote: 'Innovexa Studio engineered our online spirits vault and express delivery portal for Siddhi Laxmi. Our high-end vintage wine sales and rare whiskey reservations surged by 280% within the first 60 days!',
+    author: 'Rajesh K. Sharma',
+    role: 'Managing Director & Sommelier',
+    company: 'Siddhi Laxmi Spirits & Wine Vault',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop',
+    projectLink: 'https://siddhi-laxmi.vercel.app',
+    rating: 5,
+    highlightMetric: '+280% Wine & Spirits Orders'
+  }
+];
+
+export const FAQS: FAQItem[] = [
+  {
+    id: 'faq-1',
+    category: 'Timeline & Delivery',
+    question: 'How long does it take to design and launch my website?',
+    answer: 'Most standard business, restaurant, or gym websites are completed and launched within 1 to 2 weeks. Complex multi-language corporate portals or custom web applications take approximately 2 to 3 weeks.'
+  },
+  {
+    id: 'faq-2',
+    category: 'Pricing & Investment',
+    question: 'How much does a custom premium website cost?',
+    answer: 'Every project is tailored to your business goals. High-impact single landing pages begin at $1,200, while comprehensive multi-page business, restaurant, or gym platforms typically range between $2,500 and $5,000 depending on interactive feature requirements.'
+  },
+  {
+    id: 'faq-3',
+    category: 'Tech & Performance',
+    question: 'Why do you build with Astro and Tailwind instead of WordPress or Wix?',
+    answer: 'WordPress and drag-and-drop builders are notoriously slow, bloated with plugins, vulnerable to hacking, and rarely score above 60/100 on Google. We write clean, modern code using Astro and Tailwind CSS to guarantee sub-0.5s load times, 95+ Lighthouse scores, and ironclad security.'
+  },
+  {
+    id: 'faq-4',
+    category: 'Process & Ownership',
+    question: 'Will I own my website and content completely?',
+    answer: 'Yes, 100%. Upon final project launch, you receive full intellectual property ownership, source code repository access, and domain credentials. There are zero hidden lock-in fees.'
+  },
+  {
+    id: 'faq-5',
+    category: 'SEO & Growth',
+    question: 'Is SEO included in the website build?',
+    answer: 'Absolutely. Every website we build includes foundational technical SEO: JSON-LD local business schema, optimized open-graph metadata, semantic HTML structure, compressed next-gen images, and automatic Google Search Console indexing.'
+  },
+  {
+    id: 'faq-6',
+    category: 'Support & Updates',
+    question: 'What happens after the website is launched?',
+    answer: 'We provide 30 days of complimentary post-launch support and video tutorials showing how to update text and photos. We also offer optional monthly maintenance plans for continuous performance monitoring and content updates.'
+  }
+];
+
+export const TECH_STACK = [
+  { name: 'Astro 5', category: 'Framework', icon: 'AstroIcon' },
+  { name: 'Tailwind CSS', category: 'Styling', icon: 'TailwindIcon' },
+  { name: 'TypeScript', category: 'Language', icon: 'TsIcon' },
+  { name: 'React 19', category: 'Islands', icon: 'ReactIcon' },
+  { name: 'Node.js', category: 'Backend', icon: 'NodeIcon' },
+  { name: 'Express', category: 'API Server', icon: 'ExpressIcon' },
+  { name: 'GSAP', category: 'Motion', icon: 'GsapIcon' },
+  { name: 'Vercel', category: 'Deployment', icon: 'VercelIcon' },
+  { name: 'GitHub', category: 'Version Control', icon: 'GithubIcon' },
+  { name: 'Custom Integrations', category: 'Workflow', icon: 'AiIcon' }
+];

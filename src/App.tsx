@@ -9,7 +9,6 @@ import { FeaturedProjects } from './components/FeaturedProjects';
 import { ProcessTimeline } from './components/ProcessTimeline';
 import { Industries } from './components/Industries';
 import { WhyChooseUs } from './components/WhyChooseUs';
-import { Testimonials } from './components/Testimonials';
 import { FAQ } from './components/FAQ';
 import { ContactForm } from './components/ContactForm';
 import { TechStack } from './components/TechStack';
@@ -105,9 +104,6 @@ export default function App() {
 
         {/* Why Choose Us Section */}
         <WhyChooseUs />
-
-        {/* Testimonials Section */}
-        <Testimonials />
 
         {/* FAQ Section */}
         <FAQ />

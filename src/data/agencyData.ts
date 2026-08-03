@@ -34,17 +34,6 @@ export const SERVICES: Service[] = [
     timeline: '1-2 Weeks'
   },
   {
-    id: 'ai-chatbots',
-    title: 'Smart Chat Support',
-    description: '24/7 customer support and lead qualification flows powered by your business knowledge base.',
-    longDescription: 'Never lose a lead outside business hours. Our custom support flows answer inquiries, qualify prospects, and schedule meetings automatically using your company data.',
-    iconName: 'Bot',
-    benefits: ['Trained on your private documentation', '24/7 instantaneous customer support', 'Automatic lead qualification & booking', 'Multi-language support out of the box'],
-    idealFor: 'Service businesses, clinics, real estate, and online storefronts',
-    timeline: '3-5 Days',
-    popular: true
-  },
-  {
     id: 'custom-web-apps',
     title: 'Custom Web Applications',
     description: 'Bespoke web tools, client portals, and interactive business software built for seamless scalability.',
@@ -363,12 +352,6 @@ export const FAQS: FAQItem[] = [
     answer: 'Most standard business, restaurant, or gym websites are completed and launched within 1 to 2 weeks. Complex multi-language corporate portals or custom web applications take approximately 2 to 3 weeks.'
   },
   {
-    id: 'faq-2',
-    category: 'Pricing & Investment',
-    question: 'How much does a custom premium website cost?',
-    answer: 'Every project is tailored to your business goals. High-impact single landing pages begin at $1,200, while comprehensive multi-page business, restaurant, or gym platforms typically range between $2,500 and $5,000 depending on interactive feature requirements.'
-  },
-  {
     id: 'faq-3',
     category: 'Tech & Performance',
     question: 'Why do you build with Astro and Tailwind instead of WordPress or Wix?',
@@ -385,12 +368,6 @@ export const FAQS: FAQItem[] = [
     category: 'SEO & Growth',
     question: 'Is SEO included in the website build?',
     answer: 'Absolutely. Every website we build includes foundational technical SEO: JSON-LD local business schema, optimized open-graph metadata, semantic HTML structure, compressed next-gen images, and automatic Google Search Console indexing.'
-  },
-  {
-    id: 'faq-6',
-    category: 'Support & Updates',
-    question: 'What happens after the website is launched?',
-    answer: 'We provide 30 days of complimentary post-launch support and video tutorials showing how to update text and photos. We also offer optional monthly maintenance plans for continuous performance monitoring and content updates.'
   }
 ];
 

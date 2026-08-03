@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowUpRight, ChevronDown, Sparkles, ShieldCheck, Zap, Award } from 'lucide-react';
+import { ArrowUpRight, ChevronDown } from 'lucide-react';
 
 interface HeroProps {
   onStartProject: () => void;
@@ -22,21 +22,6 @@ export const Hero: React.FC<HeroProps> = ({ onStartProject, onViewWork }) => {
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex flex-col items-center">
-        {/* Availability Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-500/10 dark:bg-blue-500/10 border border-blue-500/20 text-xs font-bold tracking-[0.12em] uppercase text-blue-600 dark:text-blue-400 mb-6 backdrop-blur-md"
-        >
-          <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
-          <span>Available for Q3 2026</span>
-          <span className="text-zinc-300 dark:text-zinc-700">|</span>
-          <span className="flex items-center gap-1 font-semibold text-zinc-600 dark:text-zinc-400">
-            <Sparkles className="w-3.5 h-3.5 text-blue-500" /> Premium Digital Agency
-          </span>
-        </motion.div>
-
         {/* Main Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -84,39 +69,6 @@ export const Hero: React.FC<HeroProps> = ({ onStartProject, onViewWork }) => {
           </button>
         </motion.div>
 
-        {/* Floating Trust Metrics Badges with Clean Minimal Dividers */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-16 flex flex-wrap items-center justify-center gap-8 sm:gap-12 w-full max-w-3xl border-t border-zinc-200/80 dark:border-white/10 pt-10"
-        >
-          <div className="text-center px-2">
-            <p className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">99.8%</p>
-            <p className="text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-semibold mt-1">Lighthouse Speed</p>
-          </div>
-
-          <div className="hidden sm:block border-l border-zinc-200 dark:border-white/10 h-10" />
-
-          <div className="text-center px-2">
-            <p className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">3.2x</p>
-            <p className="text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-semibold mt-1">Avg Conversion Growth</p>
-          </div>
-
-          <div className="hidden sm:block border-l border-zinc-200 dark:border-white/10 h-10" />
-
-          <div className="text-center px-2">
-            <p className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">120+</p>
-            <p className="text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-semibold mt-1">Projects Delivered</p>
-          </div>
-
-          <div className="hidden sm:block border-l border-zinc-200 dark:border-white/10 h-10" />
-
-          <div className="text-center px-2">
-            <p className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-white">100%</p>
-            <p className="text-[10px] uppercase tracking-widest text-zinc-500 dark:text-zinc-400 font-semibold mt-1">On-Time Delivery</p>
-          </div>
-        </motion.div>
       </div>
 
       {/* Small Scroll Indicator */}

@@ -57,7 +57,6 @@ export interface IndustryCard {
   iconName: string;
   description: string;
   howWeHelp: string;
-  metrics: string;
   keyFeatures: string[];
 }
 

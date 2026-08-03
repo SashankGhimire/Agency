@@ -17,8 +17,6 @@ import { Footer } from './components/Footer';
 export default function App() {
   const [prefilledContact, setPrefilledContact] = useState<{
     businessType?: string;
-    budget?: string;
-    timeline?: string;
     details?: string;
     serviceName?: string;
   } | null>(null);

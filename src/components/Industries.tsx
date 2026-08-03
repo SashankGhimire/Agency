@@ -69,13 +69,10 @@ export const Industries: React.FC<IndustriesProps> = ({ onSelectIndustry }) => {
               id={`industry-card-${ind.id}`}
             >
               <div>
-                <div className="flex items-center justify-between mb-6">
+                <div className="mb-6">
                   <div className="w-12 h-12 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
                     {getIcon(ind.iconName)}
                   </div>
-                  <span className="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 bg-blue-500/10 px-2.5 py-1 rounded-full border border-blue-500/20">
-                    {ind.metrics}
-                  </span>
                 </div>
 
                 <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">

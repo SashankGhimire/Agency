@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { Send, CheckCircle2, Clock, Building, Mail, User, MessageSquare, Wallet } from 'lucide-react';
+import { Send, CheckCircle2, Building, Mail, User, MessageSquare } from 'lucide-react';
 
 interface ContactFormProps {
   prefilledData?: {
     businessType?: string;
-    budget?: string;
-    timeline?: string;
     details?: string;
     serviceName?: string;
   } | null;
@@ -18,8 +16,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
     email: '',
     businessName: '',
     businessType: '',
-    budget: '',
-    timeline: '',
     details: ''
   });
 
@@ -31,8 +27,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
       setFormData((prev) => ({
         ...prev,
         businessType: prefilledData.businessType || prefilledData.serviceName || prev.businessType,
-        budget: prefilledData.budget || prev.budget,
-        timeline: prefilledData.timeline || prev.timeline,
         details: prefilledData.details || prefilledData.serviceName ? `Inquiry regarding: ${prefilledData.serviceName}. ` : prev.details
       }));
 
@@ -169,36 +163,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
                   onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
                   className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 transition-all"
                   id="form-input-industry"
-                />
-              </div>
-
-              {/* Budget */}
-              <div>
-                <label className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 block mb-2 flex items-center gap-1.5">
-                  <Wallet className="w-3.5 h-3.5 text-blue-500" /> Estimated Budget (NPR)
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Rs. 50,000 - 1,00,000"
-                  value={formData.budget}
-                  onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                  className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 transition-all"
-                  id="form-input-budget"
-                />
-              </div>
-
-              {/* Timeline */}
-              <div>
-                <label className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 block mb-2 flex items-center gap-1.5">
-                  <Clock className="w-3.5 h-3.5 text-blue-500" /> Desired Timeline
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. 2-3 Weeks"
-                  value={formData.timeline}
-                  onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                  className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 transition-all"
-                  id="form-input-timeline"
                 />
               </div>
             </div>

@@ -164,102 +164,92 @@ export const INDUSTRIES: IndustryCard[] = [
   {
     id: 'liquor-spirits',
     title: 'Liquor & Fine Spirits',
-    subtitle: 'Luxury wine vaults, craft liquor stores & delivery portals',
+    subtitle: 'Wine shops, craft liquor stores & delivery portals',
     iconName: 'Wine',
-    description: 'Elevated digital storefronts for wine shops, rare whiskey vaults, and craft liquor boutiques.',
-    howWeHelp: 'We engineer age-verified online spirit catalogs with tasting profile search, rare bottle reservation vaults, and 1-hour local delivery checkout.',
-    metrics: '+280% Online Spirits Orders',
-    keyFeatures: ['Age-Gate Guard', 'Vintage Wine Catalog', 'Sommelier Guides', '1-Hour Local Delivery']
+    description: 'Elevated digital storefronts for wine shops, liquor boutiques, and specialty spirit dealers.',
+    howWeHelp: 'We build age-verified online catalogs with product search, reservation forms for rare bottles, and local delivery checkout.',
+    keyFeatures: ['Age-Gate Guard', 'Product Catalog', 'Reservation Form', 'Local Delivery Info']
   },
   {
     id: 'gym',
     title: 'Gym & Fitness',
-    subtitle: 'High-energy member acquisition platforms',
+    subtitle: 'Member acquisition platforms',
     iconName: 'Dumbbell',
-    description: 'Convert local active seekers into paying gym members with free pass forms and class schedules.',
-    howWeHelp: 'We replace outdated PDF schedules with real-time class filters and 1-click free day pass signups that feed directly into your sales CRM.',
-    metrics: '+240% Trial Pass Signups',
-    keyFeatures: ['Class Schedules', 'Pass Engine', 'Trainer Showcases', 'Membership Pricing']
+    description: 'Convert local visitors into paying gym members with free trial forms and class schedules.',
+    howWeHelp: 'We replace outdated PDF schedules with real-time class filters and simple trial day signup forms that go straight to your inbox.',
+    keyFeatures: ['Class Schedules', 'Trial Signup Form', 'Trainer Showcases', 'Membership Pricing']
   },
   {
     id: 'restaurant',
     title: 'Restaurants',
-    subtitle: 'Sensory dining & reservation engines',
+    subtitle: 'Menu & reservation experiences',
     iconName: 'Utensils',
-    description: 'Showcase signature dishes, stream table reservations, and capture catering inquiries.',
-    howWeHelp: 'We create high-definition visual menus with allergen filters and instant table reservations that reduce phone call friction by 80%.',
-    metrics: '3.1x Online Table Bookings',
-    keyFeatures: ['Dietary Menu', 'Table Booking', 'Takeout Orders', 'Catering Form']
+    description: 'Showcase signature dishes, share your menu clearly, and capture table & catering inquiries.',
+    howWeHelp: 'We create visual menus with clear pricing and dietary notes, plus simple reservation and catering inquiry forms to cut down on phone-only bookings.',
+    keyFeatures: ['Visual Menu', 'Table Booking Form', 'Takeout Info', 'Catering Form']
   },
   {
     id: 'cafe',
     title: 'Cafes & Bakeries',
     subtitle: 'Boutique coffee & artisanal food hubs',
     iconName: 'Coffee',
-    description: 'Engage local coffee lovers, promote daily baked goods, and sell bean subscriptions.',
-    howWeHelp: 'We integrate QR menu ordering, highlight daily specials, and optimize local Google Maps search rank for nearby walk-in traffic.',
-    metrics: '100% Core Web Vitals',
-    keyFeatures: ['Visual Menu', 'QR Table Ordering', 'Bean Subscriptions', 'Local Map SEO']
+    description: 'Engage local coffee lovers, promote daily baked goods, and share your seasonal menu.',
+    howWeHelp: 'We build a clean visual menu, highlight daily specials, and optimize your listing for local map searches so nearby customers can find you.',
+    keyFeatures: ['Visual Menu', 'Daily Specials', 'Location & Hours', 'Local Map SEO']
   },
   {
     id: 'retail',
     title: 'Retail & E-Commerce',
-    subtitle: 'Sleek storefronts & high-converting product pages',
+    subtitle: 'Storefronts & product pages',
     iconName: 'ShoppingBag',
-    description: 'Boutique online stores with fast checkout, product highlights, and local inventory maps.',
-    howWeHelp: 'We build sub-second product catalog experiences with 1-tap Apple Pay/Google Pay checkout flows that eliminate cart abandonment.',
-    metrics: '+180% Checkout Speed',
-    keyFeatures: ['Fast Catalog', '1-Tap Checkout', 'Inventory Badges', 'Product Modals']
+    description: 'Clean online stores with fast checkout, product highlights, and clear stock information.',
+    howWeHelp: 'We build fast-loading product catalog pages with checkout that supports local payment options like eSewa and Khalti alongside cards.',
+    keyFeatures: ['Fast Catalog', 'Local Payment Options', 'Stock Badges', 'Product Modals']
   },
   {
     id: 'healthcare',
     title: 'Healthcare & Wellness',
-    subtitle: 'Trust-building patient booking portals',
+    subtitle: 'Trust-building patient booking pages',
     iconName: 'HeartPulse',
-    description: 'Clean, empathetic websites for dental clinics, med spas, therapy centers, and doctors.',
-    howWeHelp: 'We instill immediate patient trust with verified reviews, doctor credentials, and HIPAA-friendly online appointment scheduling.',
-    metrics: '+210% Patient Bookings',
-    keyFeatures: ['HIPAA Forms', 'Doctor Bios', 'Treatment Guides', 'Patient Reviews']
+    description: 'Clean, reassuring websites for clinics, wellness centers, therapists, and doctors.',
+    howWeHelp: 'We build clear doctor/provider profiles, treatment information, and a simple appointment request form to reduce phone-only bookings.',
+    keyFeatures: ['Appointment Form', 'Doctor Bios', 'Treatment Guides', 'Clinic Location & Hours']
   },
   {
     id: 'corporate',
     title: 'Corporate & Enterprise',
-    subtitle: 'Authoritative international B2B platforms',
+    subtitle: 'Professional B2B platforms',
     iconName: 'Building',
-    description: 'Multi-divisional enterprise portals engineered for corporate credibility and RFP requests.',
-    howWeHelp: 'We organize multi-subsidiary conglomerates into streamlined B2B web portals with multi-language switching and investor hubs.',
-    metrics: 'Sub-second i18n speed',
-    keyFeatures: ['Multilingual', 'RFP Builder', 'Investor Hub', 'ESG Compliance']
+    description: 'Organized, credible web presence for companies handling B2B relationships and RFPs.',
+    howWeHelp: 'We organize multi-department or multi-branch businesses into a clear, professional web portal with contact routing per department.',
+    keyFeatures: ['Department Pages', 'RFP / Inquiry Form', 'Company Profile', 'Careers Page']
   },
   {
     id: 'hospitality',
     title: 'Hospitality & Hotels',
-    subtitle: 'Luxury boutique stay & booking showcases',
+    subtitle: 'Stay & booking showcases',
     iconName: 'Hotel',
-    description: 'Immersive room tours, direct guest booking engines, and local experience guides.',
-    howWeHelp: 'We bypass third-party OTA booking commissions by giving guests a direct, elegant booking experience right on your domain.',
-    metrics: '-30% OTA Commission Loss',
-    keyFeatures: ['Room Tours', 'Direct Booking', 'Local Guides', 'Amenities Grid']
+    description: 'Room tours, direct guest inquiry forms, and local experience guides.',
+    howWeHelp: 'We give guests a direct, clear way to check room details and submit a booking inquiry straight from your own website.',
+    keyFeatures: ['Room Tours', 'Booking Inquiry Form', 'Local Guides', 'Amenities Grid']
   },
   {
     id: 'real-estate',
     title: 'Real Estate & Property',
-    subtitle: 'High-end property listing & agent showcases',
+    subtitle: 'Property listing & agent showcases',
     iconName: 'Home',
-    description: 'Fullscreen floor plan viewings, neighborhood stats, and high-value lead capture.',
-    howWeHelp: 'We display luxury property portfolios with interactive photo galleries, virtual tour embeds, and private viewing request forms.',
-    metrics: '4x Higher Viewing Inquiries',
-    keyFeatures: ['Interactive Gallery', 'Floor Plans', 'Private Viewing Form', 'Agent Profiles']
+    description: 'Clear property listings, photo galleries, and lead capture for viewings.',
+    howWeHelp: 'We display property listings with photo galleries, key details, and a private viewing request form for interested buyers or renters.',
+    keyFeatures: ['Photo Gallery', 'Property Details', 'Viewing Request Form', 'Agent Profiles']
   },
   {
     id: 'startups',
-    title: 'Startups & SaaS',
-    subtitle: 'Conversion-optimized product launches',
+    title: 'Startups & New Businesses',
+    subtitle: 'Clean product & service launches',
     iconName: 'Rocket',
-    description: 'Laser-focused product landing pages, interactive pricing tiers, and waitlist engines.',
-    howWeHelp: 'We help founders launch polished product websites in days that convert investors, early adopters, and paying subscribers.',
-    metrics: '5.2% Avg Conversion Rate',
-    keyFeatures: ['Waitlist Engine', 'Feature Highlights', 'Interactive Pricing', 'Demo Modals']
+    description: 'Focused landing pages that clearly explain what you do and how to get in touch.',
+    howWeHelp: 'We help founders launch a clear, professional website quickly that explains the product or service and makes it easy to reach out.',
+    keyFeatures: ['Landing Page', 'Feature Highlights', 'Contact / Inquiry Form', 'Simple Analytics']
   }
 ];
 

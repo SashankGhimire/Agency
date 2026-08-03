@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Linkedin, Mail, ArrowUp } from 'lucide-react';
 import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
@@ -55,16 +55,6 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-3">Connect With Us</h4>
             
             <div className="flex items-center gap-3">
-              <a
-                href="https://github.com/innovexa-studio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-800 transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-
               <a
                 href="https://linkedin.com"
                 target="_blank"

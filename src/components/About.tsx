@@ -3,13 +3,6 @@ import { motion } from 'motion/react';
 import { Target, Cpu, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const About: React.FC = () => {
-  const stats = [
-    { label: 'Client Revenue Generated', value: '$4.2M+', description: 'Direct revenue driven through optimized conversion pathways' },
-    { label: 'Projects Delivered', value: '120+', description: 'High-performing web platforms launched for ambitious brands' },
-    { label: 'Core Speed Average', value: '99.8', description: 'Google Core Web Vitals score across mobile & desktop' },
-    { label: 'Client Retention Rate', value: '98%', description: 'Long-term partnership for ongoing growth and maintenance' }
-  ];
-
   const pillars = [
     {
       title: 'Strategy & Conversion First',
@@ -76,25 +69,6 @@ export const About: React.FC = () => {
               </motion.div>
             );
           })}
-        </div>
-
-        {/* Statistics Grid - Clean Borderless Layout */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-zinc-50 dark:bg-[#0a0a0d] border border-zinc-200 dark:border-zinc-800">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-zinc-200 dark:divide-zinc-800">
-            {stats.map((stat, idx) => (
-              <div key={stat.label} className={`pt-6 sm:pt-0 ${idx > 0 ? 'sm:pl-8' : ''}`}>
-                <span className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white tracking-tight block font-mono">
-                  {stat.value}
-                </span>
-                <span className="text-xs font-bold text-blue-600 dark:text-blue-400 mt-1 block uppercase tracking-wider">
-                  {stat.label}
-                </span>
-                <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-2 leading-relaxed font-light">
-                  {stat.description}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
 
       </div>

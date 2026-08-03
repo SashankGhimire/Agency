@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
-import { Send, CheckCircle2, Sparkles, Clock, DollarSign, Building, Mail, User, MessageSquare } from 'lucide-react';
+import { Send, CheckCircle2, Clock, Building, Mail, User, MessageSquare, Wallet } from 'lucide-react';
 
 interface ContactFormProps {
   prefilledData?: {
@@ -17,9 +17,9 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
     name: '',
     email: '',
     businessName: '',
-    businessType: 'Gym & Fitness',
-    budget: '$2,500 - $5,000',
-    timeline: '1-2 Weeks',
+    businessType: '',
+    budget: '',
+    timeline: '',
     details: ''
   });
 
@@ -68,7 +68,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
   return (
     <section id="contact" className="py-24 relative bg-zinc-900/5 dark:bg-[#030305] border-t border-zinc-200/80 dark:border-zinc-800/80">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">
@@ -118,7 +118,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
                 <input
                   type="text"
                   required
-                  placeholder="John Doe"
+                  placeholder="Sujan Shrestha"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
@@ -134,7 +134,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
                 <input
                   type="email"
                   required
-                  placeholder="john@yourcompany.com"
+                  placeholder="you@yourbusiness.com.np"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
@@ -149,7 +149,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
                 </label>
                 <input
                   type="text"
-                  placeholder="e.g. Metro Gym & Fitness"
+                  placeholder="e.g. Everest Gym & Fitness"
                   value={formData.businessName}
                   onChange={(e) => setFormData({ ...formData, businessName: e.target.value })}
                   className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 transition-all"
@@ -162,43 +162,29 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
                 <label className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 block mb-2">
                   Business Type / Industry
                 </label>
-                <select
+                <input
+                  type="text"
+                  placeholder="e.g. Restaurant, Gym, Retail Shop, Clinic"
                   value={formData.businessType}
                   onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
-                  className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 transition-all cursor-pointer"
-                  id="form-select-industry"
-                >
-                  <option value="Premium Business Website">Premium Business Website</option>
-                  <option value="Liquor, Wine & Fine Spirits">Liquor, Wine & Fine Spirits</option>
-                  <option value="Automation & Integrations">Automation & Integrations</option>
-                  <option value="Custom Web App">Custom Web App</option>
-                  <option value="Gym & Fitness">Gym & Fitness</option>
-                  <option value="Restaurant & Dining">Restaurant & Dining</option>
-                  <option value="Corporate & Industrial">Corporate & Industrial</option>
-                  <option value="Healthcare & Wellness">Healthcare & Wellness</option>
-                  <option value="Retail & E-Commerce">Retail & E-Commerce</option>
-                  <option value="Real Estate">Real Estate & Property</option>
-                  <option value="Startup / SaaS">Startup & SaaS Launch</option>
-                  <option value="Other">Other Custom Web App / AI Solution</option>
-                </select>
+                  className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 transition-all"
+                  id="form-input-industry"
+                />
               </div>
 
               {/* Budget */}
               <div>
                 <label className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 block mb-2 flex items-center gap-1.5">
-                  <DollarSign className="w-3.5 h-3.5 text-blue-500" /> Estimated Budget
+                  <Wallet className="w-3.5 h-3.5 text-blue-500" /> Estimated Budget (NPR)
                 </label>
-                <select
+                <input
+                  type="text"
+                  placeholder="e.g. Rs. 50,000 - 1,00,000"
                   value={formData.budget}
                   onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                  className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 transition-all cursor-pointer"
-                  id="form-select-budget"
-                >
-                  <option value="$1,200 - $2,500">$1,200 – $2,500 (Landing Page / Simple)</option>
-                  <option value="$2,500 - $5,000">$2,500 – $5,000 (Full Platform / Recommended)</option>
-                  <option value="$5,000 - $10,000">$5,000 – $10,000 (Enterprise / Multilingual)</option>
-                  <option value="$10,000+">$10,000+ (Custom Web App)</option>
-                </select>
+                  className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 transition-all"
+                  id="form-input-budget"
+                />
               </div>
 
               {/* Timeline */}
@@ -206,17 +192,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
                 <label className="text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 block mb-2 flex items-center gap-1.5">
                   <Clock className="w-3.5 h-3.5 text-blue-500" /> Desired Timeline
                 </label>
-                <select
+                <input
+                  type="text"
+                  placeholder="e.g. 2-3 Weeks"
                   value={formData.timeline}
                   onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
-                  className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 transition-all cursor-pointer"
-                  id="form-select-timeline"
-                >
-                  <option value="ASAP (Under 1 Week)">ASAP (Under 1 Week)</option>
-                  <option value="1-2 Weeks">1-2 Weeks (Standard)</option>
-                  <option value="3-4 Weeks">3-4 Weeks</option>
-                  <option value="Flexible">Flexible Schedule</option>
-                </select>
+                  className="w-full p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-sm text-zinc-900 dark:text-white focus:outline-none focus:border-blue-500 transition-all"
+                  id="form-input-timeline"
+                />
               </div>
             </div>
 

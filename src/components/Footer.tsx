@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Mail, ArrowUp } from 'lucide-react';
 import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-zinc-800">
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
-            <Logo size="lg" />
+            <Logo size="lg" theme="onDark" />
 
             <p className="text-sm text-zinc-400 leading-relaxed max-w-sm">
               Luxury digital agency crafting high-performing web platforms and tailored digital experiences for ambitious businesses and industry leaders.
@@ -55,16 +55,6 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-3">Connect With Us</h4>
             
             <div className="flex items-center gap-3">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-800 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-
               <a
                 href="mailto:hello@innovexastudio.com"
                 className="p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-800 transition-colors"

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Project } from '../types';
 import {
   X,
@@ -23,14 +24,31 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, onInquire }) => {
-  if (!project) return null;
-
   const [deviceView, setDeviceView] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
   const [activeTab, setActiveTab] = useState<'case-study' | 'live-preview'>('case-study');
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-300 overflow-y-auto">
-      <div className="bg-white dark:bg-[#0a0a0c] border border-zinc-200 dark:border-zinc-800 rounded-3xl max-w-5xl w-full my-auto overflow-hidden shadow-2xl relative flex flex-col max-h-[92vh]">
+  // Lock background page scroll while the modal is open. The modal itself is
+  // tagged with data-lenis-prevent (see below) so Lenis ignores wheel events
+  // that originate inside it and native scrolling handles the modal's own
+  // content, while the page behind stays frozen via this overflow lock.
+  useEffect(() => {
+    if (project) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [project]);
+
+  if (!project) return null;
+
+  return createPortal(
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-300">
+      <div
+        data-lenis-prevent
+        className="bg-white dark:bg-[#0a0a0c] border border-zinc-200 dark:border-zinc-800 rounded-3xl max-w-5xl w-full my-auto overflow-hidden shadow-2xl relative flex flex-col max-h-[92vh]"
+      >
         
         {/* Sticky Header Bar */}
         <div className="px-6 py-4 bg-white/90 dark:bg-[#0a0a0c]/90 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between backdrop-blur-md z-20 sticky top-0">
@@ -78,7 +96,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
         </div>
 
         {/* Modal Scrollable Body */}
-        <div className="overflow-y-auto p-6 sm:p-8 space-y-10 flex-1">
+        <div className="overflow-y-auto p-6 sm:p-8 space-y-10 flex-1 min-h-0">
           
           {/* Main Hero Media Banner / Live Frame */}
           {activeTab === 'case-study' ? (
@@ -289,6 +307,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose, on
 
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };

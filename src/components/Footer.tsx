@@ -56,9 +56,9 @@ export const Footer: React.FC = () => {
             
             <div className="flex items-center gap-3">
               <a
-                href="mailto:hello@innovexastudio.com"
+                href="mailto:innovexa7@gmail.com"
                 className="p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white hover:bg-zinc-800 transition-colors"
-                aria-label="Email"
+                aria-label="Email Innovexa"
               >
                 <Mail className="w-5 h-5" />
               </a>

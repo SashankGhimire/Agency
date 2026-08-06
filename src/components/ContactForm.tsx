@@ -21,6 +21,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
 
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState<string | null>(null);
+  const supabaseFunctionUrl = import.meta.env.VITE_SUPABASE_FUNCTION_URL;
 
   useEffect(() => {
     if (prefilledData) {
@@ -38,12 +40,44 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
     }
   }, [prefilledData]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmissionError(null);
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      if (!supabaseFunctionUrl) {
+        throw new Error('Supabase is not configured. Set VITE_SUPABASE_FUNCTION_URL.');
+      }
+
+      const response = await fetch(supabaseFunctionUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          businessName: formData.businessName || null,
+          businessType: formData.businessType || null,
+          details: formData.details
+        })
+      });
+
+      if (!response.ok) {
+        const rawBody = await response.text();
+        let message = rawBody;
+
+        try {
+          const payload = JSON.parse(rawBody) as { message?: string; error?: string };
+          message = payload.message || payload.error || message;
+        } catch {
+          // Keep the raw response text when the server does not return JSON.
+        }
+
+        throw new Error(message || 'We could not send your inquiry right now.');
+      }
+
       setSubmitted(true);
 
       // Trigger Confetti Celebration
@@ -56,7 +90,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
       } catch (err) {
         console.error(err);
       }
-    }, 800);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'We could not send your inquiry right now.';
+      setSubmissionError(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -103,6 +142,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ prefilledData }) => {
             className="glass-panel p-8 sm:p-12 rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-2xl relative space-y-6"
             id="project-inquiry-form"
           >
+            {submissionError ? (
+              <div className="rounded-2xl border border-rose-500/30 bg-rose-500/5 px-4 py-3 text-sm text-rose-600 dark:text-rose-300">
+                {submissionError}
+              </div>
+            ) : null}
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Name */}
               <div>
